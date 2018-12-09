@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
-var db = require('monk')('mongodb://alfred:password00@ds249233.mlab.com:49233/msin636');
+var db = require('monk')(databaseString);
+
 var multer=require('multer');
 var upload = multer({ dest: 'public/images/uploads/' })
 
