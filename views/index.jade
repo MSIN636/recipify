@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-md-2
+      .col-md-8
+        if posts
+          each post, i in posts
+            .panel.panel-default.post-panel
+              .panel-heading.text-center
+                h3.post_header
+                  a.post_link(href='/posts/show/#{post._id}')
+                    !=post.title
+                a.pull-right.btn.btn-danger.btn-sm(href = '/posts/delete/#{post._id}')  DELETE
+              .panel-body
+                img.post(src='/images/uploads/#{post.mainimage}')
+                br
+                br
+                !=truncateText(post.body,300)
+                br
+                p.text-center
+                  a.btn.btn-primary.btn-sm(href="/posts/show/#{post._id}") Read more>>
+              .panel-footer
+                p.text-center Posted in&nbsp;&nbsp;
+                  a(href="/categories/show/#{post.category}").badge.badge-primary #{post.category}
+                  &nbsp;&nbsp;by #{post.author} on &nbsp; #{moment(post.date).format("MM-DD-YYYY")}
+        if(posts=="")
+          .panel.panel-default.post-panel
+            .panel-heading.text-center
+              h1 No Posts at the moment
+            .panel-body
+              p.text-center Thank you for visiting Touro Blog

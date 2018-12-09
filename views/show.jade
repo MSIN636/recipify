@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  if errors
+    ul.errors
+      each error, i in errors
+        li.alert.alert-danger #{error.msg}
+  .panel.panel-primary.post-panel
+    .panel-heading.text-center
+      h3.post_header
+          !=post.title
+      a.pull-right.btn.btn-danger.btn-sm(href = '/posts/delete/#{post._id}')  DELETE
+    .panel-body
+      img.post(src='/images/uploads/#{post.mainimage}')
+      br
+      br
+      !=post.body
+      br
+      hr
+
+      .panel.panel-primary
+        .panel-heading
+          h4.panel-title
+            a(data-toggle='collapse', href='#collapse2') Comments
+        #collapse2.panel-collapse.collapse
+          .panel-body
+            if post.comments
+              each comment, i in post.comments
+                .well
+                    strong.comment-name #{comment.name} : &nbsp;
+                    span.comment-text #{comment.body}
+                    span.pull-right #{moment(comment.commentdate).format("dddd, MMMM Do YYYY, h:mm:ss a")}
+            else
+              p No comments yet, Put yours
+      .panel.panel-primary
+        .panel-heading
+          h4.panel-title
+            a(data-toggle='collapse', href='#collapse1') Add Comment
+        #collapse1.panel-collapse.collapse
+          .panel-body
+            form(method="POST", action="/posts/addcomment")
+              input(name ='postid' type = "hidden" value="#{post._id}")
+              .form-group.form-inline
+                input.form-control.comment_input.text-center(type="text", name ="name", placeholder="Name" required)
+                &nbsp;
+                input.form-control.comment_input.text-center(type="email", name ="email", placeholder="Email" required)
+                &nbsp;
+                textarea.form-control.text-center(name ="body", id="body", placeholder="Your Comment" required,  rows="1" cols="75")
+                &nbsp;
+                input.btn.btn-primary(name="submit", type="submit", value="ADD")

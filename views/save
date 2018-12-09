@@ -1,0 +1,4 @@
+.panel-footer
+  p.text-center Posted in&nbsp;&nbsp;
+    a(href="/categories/show/#{post.category}").badge.badge-primary #{post.category}
+    &nbsp;&nbsp;by #{post.author} on #{moment(post.date).format("MM-DD-YYYY")}
