@@ -2,7 +2,7 @@ doctype html
 html
   head
     title Touro Blog
-    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin="anonymous")
     link(href='/stylesheets/style.css', rel='stylesheet')
 
     meta(name="viewport",content="width=device-width, initial-scale=1, shrink-to-fit=no")
@@ -11,29 +11,26 @@ html
     script(src="/javascripts/bootstrap.js")
 
   body
-    .container-fluid
+      header
+        nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+          a.navbar-brand(href='/') Recipify Home
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarCollapse.collapse.navbar-collapse
+            //ul.nav.navbar-nav
+            ul.navbar-nav.mr-auto.nav.navbar-nav
+              li
+                a.nav-link(href="/posts/add") Share a Recipe
+              li
+                a.nav-link(href="/categories/add") Add category
+      .container-fluid
       img.logo(src='/images/spoons.jpg',width="100%")
-      .navbar.navbar-inverse
-          .container
-            .navbar-header
-              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-            .navbar-collapse.collapse
-              ul.nav.navbar-nav
-                li
-                  a(href="/") Recipify Home
-                li
-                  a(href="/posts/add") Share a Recipe
-                li
-                  a(href="/categories/add") Add category
     .container
       !=messages()
       block content
       br
     .container-fluid.well
       footer.bg-dark
-        p.text-center Touro Blog &copy; 2018
+        p.text-center Recipify &copy; 2018
     script(src='/javasripts/jquery.js')
     script(src='/javascripts/bootstrap.js')
