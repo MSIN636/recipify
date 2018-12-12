@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var session=require('express-session');
 var mongo = require('mongodb');
 var config = require('./config.js');
-var db = require('monk');
+var db = require('monk')(databaseString);
 
 var multer=require('multer');
 var upload = multer({ dest: 'public/images/uploads/' })
