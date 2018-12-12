@@ -17,12 +17,16 @@ html
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarCollapse.collapse.navbar-collapse
-          //ul.nav.navbar-nav
-          ul.navbar-nav.mr-auto.nav.navbar-nav
+          ul.navbar-nav.mr-auto.nav
             li
               a.nav-link(href="/posts/add") Share a Recipe
             li
               a.nav-link(href="/categories/add") Add category
+          ul.navbar-nav.ml-auto.nav
+            li
+              a.nav-link(href="/signup") Sign Up
+            li
+              a.nav-link(href="/login") Login
     .container-fluid
       #myCarousel.carousel.slide(data-ride='carousel')
           ol.carousel-indicators
