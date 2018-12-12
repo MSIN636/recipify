@@ -3,28 +3,24 @@ extends layout
 block content
   .album.py-5.bg-light
     .container
+      if posts
       .row
-        .col-md-2
-        .col-md-8
-          if posts
-          .row
-            each post, i in posts
-              .col-md-4
-                .card.mb-4.box-shadow
-                  img.card-img-top(data-src='/images/uploads/#{post.mainimage}', alt='#{post.title}')
-                  .card-body
-                    p.card-text.h-100
-                      !=truncateText(post.body,300)
-                    .d-flex.justify-content-between.align-items-center
-                      .btn-group
-                        a(href = '/posts/delete/#{post._id}')
-                          button.btn.btn-sm.btn-outline-secondary(type='button') DELETE
-                        button.btn.btn-sm.btn-outline-secondary(type='button') Edit
-                      small.text-muted 9 mins
-              //////////////////////////
-          if(posts=="")
-            .panel.panel-default.post-panel
-              .panel-heading.text-center
-                h1 No Posts at the moment
-              .panel-body
-                p.text-center Thank you for visiting Touro Blog
+        each post, i in posts
+          .col-md-4
+            .card.mb-4.box-shadow
+              img.card-img-top(data-src='/images/uploads/#{post.mainimage}', alt='#{post.title}')
+              .card-body
+                p.card-text.h-100
+                  !=truncateText(post.body,300)
+                .d-flex.justify-content-between.align-items-center
+                  .btn-group
+                    a(href = '/posts/delete/#{post._id}')
+                      button.btn.btn-sm.btn-outline-secondary(type='button') DELETE
+                    button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+                  small.text-muted 9 mins
+      if(posts=="")
+        .panel.panel-default.post-panel
+          .panel-heading.text-center
+            h1 No Posts at the moment
+          .panel-body
+            p.text-center Thank you for visiting Touro Blog
