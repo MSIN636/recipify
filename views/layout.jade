@@ -28,52 +28,25 @@ html
             li
               a.nav-link(href="/login") Login
     .container-fluid
-<<<<<<< HEAD
+
+    #carouselExampleControls.carousel.slide(data-ride='carousel')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='/images/oatmeal with fruits.jpg' width='110px',height='380px', alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='/images/pasta.jpg' width='110px',height='380px')
+        .carousel-item
+          img.d-block.w-100(src="/images/pizza-muffin-popover.jpg" width='110px',height='380px')
+        .carousel-item
+          img.d-block.w-100(src="/images/spoons.jpg" width='110px',height='380px')
+      a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
 
 
-    #myCarousel.carousel.slide(data-ride='carousel')
-        ol.carousel-indicators
-          li.active(data-target='#myCarousel', data-slide-to='0')
-          li(data-target='#myCarousel', data-slide-to='1')
-          li(data-target='#myCarousel', data-slide-to='2')
-          li(data-target='#myCarousel', data-slide-to='3')
-        .carousel-inner
-          .item.active
-            img.first-slide(src='/images/berry-cheesecake.jpg' width='1350px',height='300px')
-            .container
-              .carousel-caption
-                h1 Desserts
-                We are proud to say that we have the best vegan handcrafted desserts in the city.
-                They are baked fresh especially for us by Sweets From the Earth, and are certified kosher.
-
-
-                p
-                  a.btn.btn-lg.btn-primary(href='#') Learn more
-          .item
-            img.second-slide(src='/images/cheese spicy pizza.jpg')
-            .container
-              .carousel-caption
-                h1 Mains
-                p Enjoy our mindblowing delicious maincourse
-
-                p
-                  a.btn.btn-lg.btn-primary(href='#') Learn more
-          .item
-            img.third-slide(src="/images/dinner-salad.jpg")
-            .container
-              .carousel-caption
-                h1 Salads
-                p Discover our healthy and tasty Salads
-                p
-                  a.btn.btn-lg.btn-primary(href='#') Learn more
-          .item
-            img.third-slide(src="/images/kiwi juice.jpg")
-            .container
-              .carousel-caption
-                h1 Apetizers
-                p Our Awesome Apetizers
-                p
-                  a.btn.btn-lg.btn-primary(href="#") Learn more
 
 
 
@@ -87,68 +60,8 @@ html
 
 
 
-      .navbar.navbar-inverse
-          .container
-            .navbar-header
-              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-            .navbar-collapse.collapse
-              ul.nav.navbar-nav
-                li
-                  a(href="/") Recipify Home
-                li
-                  a(href="/posts/add") Share a Recipe
-                li
-                  a(href="/categories/add") Add category
-=======
-      #myCarousel.carousel.slide(data-ride='carousel')
-          ol.carousel-indicators
-            li.active(data-target='#myCarousel', data-slide-to='0')
-            li(data-target='#myCarousel', data-slide-to='1')
-            li(data-target='#myCarousel', data-slide-to='2')
-            li(data-target='#myCarousel', data-slide-to='3')
-          .carousel-inner
-            .item.active
-              img.first-slide(src='/images/berry-cheesecake.jpg')
-              .container
-                .carousel-caption
-                  h1 Desserts
-                  We are proud to say that we have the best vegan handcrafted desserts in the city.
-                  They are baked fresh especially for us by Sweets From the Earth, and are certified kosher.
-                  p
-                    a.btn.btn-lg.btn-primary(href='#') Learn more
-            .item
-              img.second-slide(src='/images/cheese spicy pizza.jpg')
-              .container
-                .carousel-caption
-                  h1 Mains
-                  p Enjoy our mindblowing delicious maincourse
 
-                  p
-                    a.btn.btn-lg.btn-primary(href='#') Learn more
-            .item
-              img.third-slide(src="/images/dinner-salad.jpg")
-              .container
-                .carousel-caption
-                  h1 Salads
-                  p Discover our healthy and tasty Salads
-                  p
-                    a.btn.btn-lg.btn-primary(href='#') Learn more
-            .item
-              img.third-slide(src="/images/kiwi juice.jpg")
-              .container
-                .carousel-caption
-                  h1 Apetizers
-                  p Our Awesome Apetizers
-                  p
-                    a.btn.btn-lg.btn-primary(href="#") Learn more
-          a.left.carousel-control(href='#myCarousel', data-slide='prev')
-            span.glyphicon.glyphicon-chevron-left
-          a.right.carousel-control(href='#myCarousel', data-slide='next')
-            span.glyphicon.glyphicon-chevron-right
->>>>>>> 84420bd4378bdf6d60fa0a8ddbe7e9a6921a09ec
+
     .container
       !=messages()
       block content
