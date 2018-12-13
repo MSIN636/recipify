@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
-var db = require('monk')(databaseString);
+var db = require('monk')('mongodb://Recipify:MSIN636!@ds229474.mlab.com:29474/recipify');
 
 router.get('/add', function(req, res, next) {
   var categories = db.get('categories');

@@ -5,10 +5,10 @@ var cookieParser = require('cookie-parser');
 var session=require('express-session');
 var mongo = require('mongodb');
 var config = require('./config.js');
-var db = require('monk');
+var db = require('monk')('mongodb://Recipify:MSIN636!@ds229474.mlab.com:29474/recipify');
 
 var multer=require('multer');
-var upload = multer({ dest: 'public/images/uploads/' })
+var upload = multer({ dest: 'public/images/uploads/' });
 var flash=require('connect-flash');
 var logger = require('morgan');
 var expressValidator=require('express-validator');
@@ -54,6 +54,7 @@ app.use(function(req, res, next){
 });
 
 app.use('/', indexRouter);
+console.log('yes');
 app.use('/posts', postsRouter);
 app.use('/categories', categoriesRouter);
 
