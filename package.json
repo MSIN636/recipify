@@ -20,6 +20,7 @@
     "mongodb": "*",
     "monk": "*",
     "morgan": "~1.9.0",
-    "multer": "*"
+    "multer": "*",
+    "server-index":"*"
   }
 }
