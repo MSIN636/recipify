@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var session=require('express-session');
 var mongo = require('mongodb');
 var config = require('./config.js');
+var serveIndex = require('serve-index');
 var db = require('monk')('mongodb://Recipify:MSIN636!@ds229474.mlab.com:29474/recipify');
 
 var multer=require('multer');
@@ -35,6 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images/uploads', serveIndex(__dirname + '/images/uploads/'));
 
 app.use(session({secret:'secret',
     saveUninitialized:true,
